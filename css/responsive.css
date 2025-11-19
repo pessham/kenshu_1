@@ -1,0 +1,299 @@
+/* レスポンシブデザイン */
+
+/* タブレット（768px - 1024px） */
+@media (max-width: 1024px) {
+  main {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 1.125rem;
+  }
+
+  .schedule-cards,
+  .materials-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* スマートフォン（768px以下） */
+@media (max-width: 768px) {
+  /* ナビゲーション */
+  nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
+
+  nav h1 {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: var(--spacing-xs);
+  }
+
+  nav li {
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    width: 100%;
+  }
+
+  /* メインコンテンツ */
+  main {
+    padding: var(--spacing-sm);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* ヒーローセクション */
+  .hero {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* カードグリッド */
+  .schedule-cards,
+  .materials-list {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  /* ステップ表示 */
+  .steps {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .step:not(:last-child)::after {
+    display: none;
+  }
+
+  .step {
+    padding: var(--spacing-xs);
+  }
+
+  /* フィルター */
+  .filters {
+    flex-direction: column;
+  }
+
+  /* フォーム */
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  /* プレビューアクション */
+  .preview-actions,
+  .template-buttons {
+    flex-direction: column;
+  }
+
+  .preview-actions button,
+  .template-buttons button {
+    width: 100%;
+  }
+
+  /* 資料カード */
+  .material-card .actions {
+    flex-direction: column;
+  }
+
+  .btn-preview,
+  .btn-download {
+    width: 100%;
+  }
+
+  /* モーダル */
+  .modal-content {
+    max-width: 95%;
+    max-height: 95%;
+    padding: var(--spacing-sm);
+  }
+
+  #preview-iframe {
+    height: 400px;
+  }
+
+  /* プレビューボックス */
+  .preview-box {
+    max-height: 300px;
+    font-size: 0.75rem;
+  }
+
+  /* トースト */
+  .toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* 星評価 */
+  .star-rating label {
+    font-size: 1.5rem;
+  }
+
+  /* スケジュールカード内のリスト */
+  .schedule-card ul {
+    font-size: 0.875rem;
+  }
+
+  /* お知らせ */
+  .announcement {
+    font-size: 0.875rem;
+  }
+}
+
+/* 極小画面（480px以下） */
+@media (max-width: 480px) {
+  nav h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+  }
+
+  .hero h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero p {
+    font-size: 0.875rem;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.875rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-template {
+    font-size: 0.875rem;
+    padding: var(--spacing-xs);
+  }
+
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+  }
+
+  .material-icon {
+    font-size: 2rem;
+  }
+
+  .star-rating label {
+    font-size: 1.25rem;
+  }
+
+  .preview-box pre {
+    font-size: 0.625rem;
+  }
+}
+
+/* プリント用 */
+@media print {
+  header,
+  .form-actions,
+  .preview-actions,
+  .template-buttons,
+  .filters,
+  .toast {
+    display: none;
+  }
+
+  body {
+    background-color: white;
+  }
+
+  .card,
+  .form-section {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .preview-box {
+    max-height: none;
+  }
+}
+
+/* 横向き対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .steps {
+    flex-direction: row;
+  }
+
+  .step:not(:last-child)::after {
+    display: block;
+  }
+}
+
+/* 高解像度ディスプレイ対応 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* アクセシビリティ: 減らされたモーション */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ダークモード対応（将来の拡張用） */
+@media (prefers-color-scheme: dark) {
+  /*
+  body {
+    background-color: #1a202c;
+    color: #e2e8f0;
+  }
+  */
+}

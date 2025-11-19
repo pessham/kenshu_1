@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Uploaded files
+uploads/materials/*
+uploads/homework/*
+!uploads/materials/.gitkeep
+!uploads/homework/.gitkeep
+
+# Data files (optional - uncomment to exclude user data)
+# data/homework_submissions.json
+# data/feedback.json
+
+# Environment variables
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Temporary files
+tmp/
+temp/

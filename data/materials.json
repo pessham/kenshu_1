@@ -1,0 +1,70 @@
+{
+  "materials": [
+    {
+      "id": 1,
+      "session": 1,
+      "title": "第1回: プレゼンテーションスライド",
+      "type": "slide",
+      "format": "pdf",
+      "size": "982KB",
+      "url": "/uploads/materials/アステック_AI活用研修_第1回_.pdf",
+      "description": "プロンプトとコンテクストの基礎を学ぶスライド資料",
+      "uploadedAt": "2025-11-20T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "session": 1,
+      "title": "メタプロンプト生成ガイド",
+      "type": "guide",
+      "format": "md",
+      "size": "15KB",
+      "url": "/uploads/materials/メタプロンプト生成ガイド.md",
+      "description": "メタプロンプトの作成方法を詳しく解説したガイドブック",
+      "uploadedAt": "2025-11-20T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "session": 2,
+      "title": "第2回: プレゼンテーションスライド",
+      "type": "slide",
+      "format": "pdf",
+      "size": "準備中",
+      "url": "/uploads/materials/第2回_プレゼンテーション.pdf",
+      "description": "GitHub Copilotの実践的な使い方とプロンプトテクニック",
+      "uploadedAt": "2025-12-18T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "session": 3,
+      "title": "第3回: プレゼンテーションスライド",
+      "type": "slide",
+      "format": "pdf",
+      "size": "準備中",
+      "url": "/uploads/materials/第3回_プレゼンテーション.pdf",
+      "description": "Claude Codeによる開発自動化の実践",
+      "uploadedAt": "2026-01-22T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "session": 4,
+      "title": "第4回: プレゼンテーションスライド",
+      "type": "slide",
+      "format": "pdf",
+      "size": "準備中",
+      "url": "/uploads/materials/第4回_プレゼンテーション.pdf",
+      "description": "RAGとコンテクスト管理の実践テクニック",
+      "uploadedAt": "2026-02-19T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "session": 5,
+      "title": "第5回: プレゼンテーションスライド",
+      "type": "slide",
+      "format": "pdf",
+      "size": "準備中",
+      "url": "/uploads/materials/第5回_プレゼンテーション.pdf",
+      "description": "全5回のまとめと実践プロジェクト",
+      "uploadedAt": "2026-03-19T10:00:00Z"
+    }
+  ]
+}

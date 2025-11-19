@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>資料ダウンロード - AI活用研修ポータル</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AI活用研修ポータル</h1>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="materials.html">資料</a></li>
+        <li><a href="meta-prompt.html">メタプロンプト</a></li>
+        <li><a href="homework.html">宿題</a></li>
+        <li><a href="feedback.html">感想</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>研修資料ダウンロード</h2>
+    <p>各回の研修資料をダウンロードできます。スライド、台本、補足資料など、学習に役立つ資料を提供しています。</p>
+
+    <!-- フィルタリング -->
+    <section class="filters">
+      <select id="session-filter">
+        <option value="all">すべての回</option>
+        <option value="1">第1回</option>
+        <option value="2">第2回</option>
+        <option value="3">第3回</option>
+        <option value="4">第4回</option>
+        <option value="5">第5回</option>
+      </select>
+      <select id="type-filter">
+        <option value="all">すべての種類</option>
+        <option value="slide">スライド</option>
+        <option value="guide">ガイド</option>
+        <option value="reference">参考資料</option>
+      </select>
+    </section>
+
+    <!-- 資料一覧 -->
+    <section class="materials-list" id="materials-list">
+      <!-- JavaScriptで動的に生成 -->
+    </section>
+  </main>
+
+  <!-- プレビューモーダル -->
+  <div id="preview-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closePreview()">&times;</span>
+      <h3 id="preview-title">資料プレビュー</h3>
+      <iframe id="preview-iframe" style="width: 100%; height: 600px; border: none;"></iframe>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 資料データ
+    let materialsData = [];
+
+    // アイコンマッピング
+    const iconMap = {
+      slide: '📊',
+      guide: '🛠️',
+      reference: '📚'
+    };
+
+    // APIから資料データを取得
+    async function loadMaterials() {
+      try {
+        const response = await fetch('/api/materials');
+        const data = await response.json();
+        materialsData = data.materials || [];
+        filterMaterials();
+      } catch (error) {
+        console.error('資料データの読み込みエラー:', error);
+        showToast('資料データの読み込みに失敗しました', 'warning');
+      }
+    }
+
+    // 資料カードの生成
+    function renderMaterials(materials) {
+      const container = document.getElementById('materials-list');
+      container.innerHTML = '';
+
+      if (materials.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--color-text-light);">該当する資料がありません</p>';
+        return;
+      }
+
+      materials.forEach(material => {
+        const card = document.createElement('div');
+        card.className = 'material-card';
+        card.dataset.session = material.session;
+        card.dataset.type = material.type;
+
+        card.innerHTML = `
+          <div class="material-icon">${iconMap[material.type] || '📄'}</div>
+          <h4>${material.title}</h4>
+          <p class="description">${material.description}</p>
+          <p>ファイル形式: ${material.format.toUpperCase()} | サイズ: ${material.size}</p>
+          <div class="actions">
+            <button class="btn-preview" onclick="showPreview('${material.url}', '${material.format}', '${material.title}')">
+              プレビュー
+            </button>
+            <a href="${material.url}" download class="btn-download">
+              ダウンロード
+            </a>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // フィルタリング処理
+    function filterMaterials() {
+      const sessionFilter = document.getElementById('session-filter').value;
+      const typeFilter = document.getElementById('type-filter').value;
+
+      const filtered = materialsData.filter(material => {
+        const sessionMatch = sessionFilter === 'all' || material.session == sessionFilter;
+        const typeMatch = typeFilter === 'all' || material.type === typeFilter;
+        return sessionMatch && typeMatch;
+      });
+
+      renderMaterials(filtered);
+    }
+
+    // プレビュー表示
+    function showPreview(fileUrl, fileType, title) {
+      const modal = document.getElementById('preview-modal');
+      const iframe = document.getElementById('preview-iframe');
+      const titleElement = document.getElementById('preview-title');
+
+      titleElement.textContent = title;
+
+      if (fileType === 'pdf') {
+        iframe.src = fileUrl;
+      } else if (fileType === 'pptx') {
+        // Office Online Viewerを使用
+        iframe.src = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(window.location.origin + fileUrl)}`;
+      } else if (fileType === 'md') {
+        // Markdownファイルの場合、新しいウィンドウで開く
+        window.open(fileUrl, '_blank');
+        return;
+      } else {
+        showToast('このファイル形式はプレビューできません', 'warning');
+        return;
+      }
+
+      modal.classList.add('active');
+    }
+
+    // プレビューを閉じる
+    function closePreview() {
+      const modal = document.getElementById('preview-modal');
+      modal.classList.remove('active');
+      document.getElementById('preview-iframe').src = '';
+    }
+
+    // モーダルの外側クリックで閉じる
+    document.getElementById('preview-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closePreview();
+      }
+    });
+
+    // イベントリスナー設定
+    document.getElementById('session-filter').addEventListener('change', filterMaterials);
+    document.getElementById('type-filter').addEventListener('change', filterMaterials);
+
+    // 初期表示
+    document.addEventListener('DOMContentLoaded', function() {
+      // URLパラメータからセッションを取得
+      const sessionParam = getUrlParameter('session');
+      if (sessionParam) {
+        document.getElementById('session-filter').value = sessionParam;
+      }
+
+      // 資料データを読み込む
+      loadMaterials();
+    });
+  </script>
+</body>
+</html>

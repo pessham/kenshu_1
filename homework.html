@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宿題・課題提出 - AI活用研修ポータル</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AI活用研修ポータル</h1>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="materials.html">資料</a></li>
+        <li><a href="meta-prompt.html">メタプロンプト</a></li>
+        <li><a href="homework.html">宿題</a></li>
+        <li><a href="feedback.html">感想</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="homework-section">
+      <h2>宿題・課題提出</h2>
+      <p>各回の宿題をこちらから提出できます。締切日時を確認の上、提出してください。</p>
+
+      <!-- 課題一覧 -->
+      <div class="homework-list" id="homework-list">
+        <!-- JavaScriptで動的に生成 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- 提出内容確認モーダル -->
+  <div id="submission-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeSubmissionModal()">&times;</span>
+      <h3>提出内容</h3>
+      <div id="submission-content"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 宿題データ
+    const homeworkData = [
+      {
+        id: 1,
+        session: 1,
+        title: 'メタプロンプトを作成して使ってみよう',
+        description: [
+          'メタプロンプト生成ツールで自分専用のメタプロンプトを作成',
+          '実際に業務で3回以上使用',
+          '使用例と感想を提出'
+        ],
+        deadline: '2025-11-27T12:00:00',
+        fields: [
+          { name: 'meta_prompt', label: '作成したメタプロンプト', type: 'textarea', rows: 10, required: true },
+          { name: 'usage1', label: '使用例1（何を依頼したか）', type: 'textarea', rows: 5, required: true },
+          { name: 'result1', label: '使用例1の結果・感想', type: 'textarea', rows: 3, required: true },
+          { name: 'usage2', label: '使用例2（何を依頼したか）', type: 'textarea', rows: 5, required: true },
+          { name: 'result2', label: '使用例2の結果・感想', type: 'textarea', rows: 3, required: true },
+          { name: 'usage3', label: '使用例3（何を依頼したか）', type: 'textarea', rows: 5, required: true },
+          { name: 'result3', label: '使用例3の結果・感想', type: 'textarea', rows: 3, required: true },
+          { name: 'overall', label: '全体の感想・気づき', type: 'textarea', rows: 5, required: true }
+        ]
+      },
+      {
+        id: 2,
+        session: 2,
+        title: 'GitHub Copilotで実際にコードを書いてみよう',
+        description: [
+          'GitHub Copilotを使って実際の業務コードを生成',
+          '生成したコードとプロンプトを提出',
+          '工夫した点と改善点をレポート'
+        ],
+        deadline: '2025-12-04T12:00:00',
+        fields: [
+          { name: 'task', label: '実装したタスク内容', type: 'textarea', rows: 3, required: true },
+          { name: 'prompt', label: '使用したプロンプト（コメントなど）', type: 'textarea', rows: 5, required: true },
+          { name: 'code', label: '生成したコード', type: 'textarea', rows: 15, required: true },
+          { name: 'codeFile', label: 'または、ファイルをアップロード', type: 'file', accept: '.php,.js,.py,.cs,.vb,.txt', required: false },
+          { name: 'improvements', label: '工夫した点', type: 'textarea', rows: 5, required: true },
+          { name: 'issues', label: '困った点・改善点', type: 'textarea', rows: 5, required: true }
+        ]
+      },
+      {
+        id: 3,
+        session: 3,
+        title: 'Claude Codeでリファクタリングに挑戦',
+        description: [
+          'Claude Codeを使って既存コードをリファクタリング',
+          'Before/Afterのコードを提出',
+          '効果と気づきをレポート'
+        ],
+        deadline: '2025-12-11T12:00:00',
+        fields: [
+          { name: 'target', label: 'リファクタリング対象の説明', type: 'textarea', rows: 3, required: true },
+          { name: 'before', label: 'リファクタリング前のコード', type: 'textarea', rows: 10, required: true },
+          { name: 'after', label: 'リファクタリング後のコード', type: 'textarea', rows: 10, required: true },
+          { name: 'prompt', label: '使用したプロンプト', type: 'textarea', rows: 5, required: true },
+          { name: 'benefits', label: '改善効果（可読性、保守性など）', type: 'textarea', rows: 5, required: true },
+          { name: 'learnings', label: '気づき・学び', type: 'textarea', rows: 5, required: true }
+        ]
+      },
+      {
+        id: 4,
+        session: 4,
+        title: 'RAGを活用したドキュメント分析',
+        description: [
+          '社内ドキュメントや仕様書をRAGで分析',
+          '得られた知見を提出',
+          '実務での活用アイデアを提案'
+        ],
+        deadline: '2025-12-18T12:00:00',
+        fields: [
+          { name: 'document_type', label: '分析したドキュメントの種類', type: 'text', required: true },
+          { name: 'question', label: 'RAGに投げた質問', type: 'textarea', rows: 5, required: true },
+          { name: 'answer', label: '得られた回答', type: 'textarea', rows: 10, required: true },
+          { name: 'accuracy', label: '回答の正確性・有用性', type: 'textarea', rows: 5, required: true },
+          { name: 'use_cases', label: '実務での活用アイデア', type: 'textarea', rows: 5, required: true }
+        ]
+      },
+      {
+        id: 5,
+        session: 5,
+        title: '実践プロジェクトの成果発表',
+        description: [
+          'これまでの学びを統合した実践プロジェクト',
+          '成果物と学びをまとめて提出',
+          'ベストプラクティスの共有'
+        ],
+        deadline: '2025-12-25T12:00:00',
+        fields: [
+          { name: 'project_title', label: 'プロジェクトタイトル', type: 'text', required: true },
+          { name: 'overview', label: 'プロジェクト概要', type: 'textarea', rows: 5, required: true },
+          { name: 'ai_tools', label: '使用したAIツール', type: 'textarea', rows: 3, required: true },
+          { name: 'achievements', label: '成果物・達成したこと', type: 'textarea', rows: 10, required: true },
+          { name: 'best_practices', label: '発見したベストプラクティス', type: 'textarea', rows: 5, required: true },
+          { name: 'future', label: '今後の活用計画', type: 'textarea', rows: 5, required: true }
+        ]
+      }
+    ];
+
+    // 宿題カードの生成
+    function renderHomework() {
+      const container = document.getElementById('homework-list');
+      const submissions = storage.get('homeworkSubmissions') || {};
+
+      homeworkData.forEach(homework => {
+        const submission = submissions[homework.id];
+        const isSubmitted = !!submission;
+        const isPastDeadline = new Date() > new Date(homework.deadline);
+
+        const card = document.createElement('div');
+        card.className = 'homework-card';
+
+        const badgeClass = isSubmitted ? 'badge-submitted' : 'badge-pending';
+        const badgeText = isSubmitted ? '提出済み' : '未提出';
+
+        let contentHTML = `
+          <div class="homework-header">
+            <h3>第${homework.session}回: ${homework.title}</h3>
+            <span class="badge ${badgeClass}">${badgeText}</span>
+          </div>
+          <div class="homework-content">
+            <p class="deadline">締切: ${formatDate(homework.deadline)}${isPastDeadline ? ' (締切超過)' : ''}</p>
+            <div class="homework-description">
+              <h4>課題内容</h4>
+              <ol>
+                ${homework.description.map(desc => `<li>${desc}</li>`).join('')}
+              </ol>
+            </div>
+        `;
+
+        if (isSubmitted) {
+          contentHTML += `
+            <div class="submitted-info">
+              <p>✅ ${formatDate(submission.submittedAt)} に提出しました</p>
+              <button class="btn-secondary" onclick="viewSubmission(${homework.id})">
+                提出内容を確認
+              </button>
+            </div>
+          `;
+        } else {
+          contentHTML += `
+            <form class="homework-form" id="homework-form-${homework.id}" data-homework-id="${homework.id}">
+          `;
+
+          homework.fields.forEach(field => {
+            contentHTML += '<div class="form-group">';
+            contentHTML += `<label>${field.label}${field.required ? ' <span style="color: var(--color-warning);">*</span>' : ''}</label>`;
+
+            if (field.type === 'textarea') {
+              contentHTML += `<textarea name="${field.name}" rows="${field.rows}" ${field.required ? 'required' : ''}></textarea>`;
+            } else if (field.type === 'file') {
+              contentHTML += `<input type="file" name="${field.name}" accept="${field.accept}" ${field.required ? 'required' : ''}>`;
+            } else {
+              contentHTML += `<input type="${field.type}" name="${field.name}" ${field.required ? 'required' : ''}>`;
+            }
+
+            contentHTML += '</div>';
+          });
+
+          contentHTML += `
+              <button type="submit" class="btn-primary">提出する</button>
+            </form>
+          `;
+        }
+
+        contentHTML += '</div>';
+        card.innerHTML = contentHTML;
+        container.appendChild(card);
+      });
+
+      // フォーム送信イベントの設定
+      document.querySelectorAll('.homework-form').forEach(form => {
+        form.addEventListener('submit', handleSubmit);
+      });
+    }
+
+    // 宿題提出処理
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const homeworkId = parseInt(form.dataset.homeworkId);
+      const formData = new FormData(form);
+
+      // ファイルがある場合の処理（実際はサーバーにアップロード）
+      const fileInput = form.querySelector('input[type="file"]');
+      if (fileInput && fileInput.files.length > 0) {
+        // 実際の実装ではサーバーにアップロード
+        formData.set('hasFile', 'true');
+        formData.set('fileName', fileInput.files[0].name);
+      }
+
+      const submission = {
+        homeworkId: homeworkId,
+        submittedAt: new Date().toISOString(),
+        data: Object.fromEntries(formData)
+      };
+
+      // LocalStorageに保存（実際はサーバーに送信）
+      const submissions = storage.get('homeworkSubmissions') || {};
+      submissions[homeworkId] = submission;
+      storage.set('homeworkSubmissions', submissions);
+
+      // 進捗状況の更新
+      const completedSessions = storage.get('completedSessions') || [];
+      const homework = homeworkData.find(h => h.id === homeworkId);
+      if (homework && !completedSessions.includes(homework.session)) {
+        completedSessions.push(homework.session);
+        storage.set('completedSessions', completedSessions);
+      }
+
+      showToast('宿題を提出しました！');
+      setTimeout(() => location.reload(), 1000);
+    }
+
+    // 提出内容確認
+    function viewSubmission(homeworkId) {
+      const submissions = storage.get('homeworkSubmissions') || {};
+      const submission = submissions[homeworkId];
+      const homework = homeworkData.find(h => h.id === homeworkId);
+
+      if (!submission || !homework) {
+        showToast('提出内容が見つかりません', 'warning');
+        return;
+      }
+
+      const modal = document.getElementById('submission-modal');
+      const content = document.getElementById('submission-content');
+
+      let html = `<p><strong>提出日時:</strong> ${formatDate(submission.submittedAt)}</p><hr>`;
+
+      homework.fields.forEach(field => {
+        const value = submission.data[field.name];
+        if (value) {
+          html += `<div style="margin-bottom: 1rem;">`;
+          html += `<strong>${field.label}:</strong><br>`;
+          if (field.type === 'textarea') {
+            html += `<pre style="white-space: pre-wrap; background: #f7f9fa; padding: 1rem; border-radius: 4px;">${value}</pre>`;
+          } else {
+            html += `<p>${value}</p>`;
+          }
+          html += `</div>`;
+        }
+      });
+
+      content.innerHTML = html;
+      modal.classList.add('active');
+    }
+
+    function closeSubmissionModal() {
+      const modal = document.getElementById('submission-modal');
+      modal.classList.remove('active');
+    }
+
+    // モーダルの外側クリックで閉じる
+    document.getElementById('submission-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeSubmissionModal();
+      }
+    });
+
+    // 初期表示
+    document.addEventListener('DOMContentLoaded', function() {
+      renderHomework();
+
+      // URLパラメータからセッションを取得
+      const sessionParam = getUrlParameter('session');
+      if (sessionParam) {
+        const targetCard = document.querySelector(`[data-homework-id="${sessionParam}"]`);
+        if (targetCard) {
+          targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

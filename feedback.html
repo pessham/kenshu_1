@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>感想・フィードバック - AI活用研修ポータル</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AI活用研修ポータル</h1>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="materials.html">資料</a></li>
+        <li><a href="meta-prompt.html">メタプロンプト</a></li>
+        <li><a href="homework.html">宿題</a></li>
+        <li><a href="feedback.html">感想</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="feedback-section">
+      <h2>研修の感想・フィードバック</h2>
+      <p>皆さんの率直なご意見をお聞かせください。今後の研修改善に活用させていただきます。</p>
+
+      <!-- 研修選択 -->
+      <div class="form-section">
+        <div class="form-group">
+          <label for="session-select">フィードバック対象の研修を選択</label>
+          <select id="session-select">
+            <option value="">選択してください</option>
+            <option value="1">第1回: プロンプトとコンテクストを理解する</option>
+            <option value="2">第2回: GitHub Copilotの実践活用</option>
+            <option value="3">第3回: Claude Codeによる開発自動化</option>
+            <option value="4">第4回: RAGとコンテクスト管理</option>
+            <option value="5">第5回: 総まとめと実践プロジェクト</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- フィードバックフォーム -->
+      <form id="feedback-form" style="display: none;">
+        <!-- 星評価 -->
+        <div class="form-section">
+          <h3>総合評価</h3>
+
+          <div class="rating-group">
+            <label>内容の理解しやすさ</label>
+            <div class="star-rating" data-rating-name="understanding">
+              <input type="radio" name="understanding" value="5" id="u5">
+              <label for="u5">★</label>
+              <input type="radio" name="understanding" value="4" id="u4">
+              <label for="u4">★</label>
+              <input type="radio" name="understanding" value="3" id="u3">
+              <label for="u3">★</label>
+              <input type="radio" name="understanding" value="2" id="u2">
+              <label for="u2">★</label>
+              <input type="radio" name="understanding" value="1" id="u1">
+              <label for="u1">★</label>
+            </div>
+          </div>
+
+          <div class="rating-group">
+            <label>実務への活用度</label>
+            <div class="star-rating" data-rating-name="usefulness">
+              <input type="radio" name="usefulness" value="5" id="use5">
+              <label for="use5">★</label>
+              <input type="radio" name="usefulness" value="4" id="use4">
+              <label for="use4">★</label>
+              <input type="radio" name="usefulness" value="3" id="use3">
+              <label for="use3">★</label>
+              <input type="radio" name="usefulness" value="2" id="use2">
+              <label for="use2">★</label>
+              <input type="radio" name="usefulness" value="1" id="use1">
+              <label for="use1">★</label>
+            </div>
+          </div>
+
+          <div class="rating-group">
+            <label>時間配分の適切さ</label>
+            <div class="star-rating" data-rating-name="time">
+              <input type="radio" name="time" value="5" id="time5">
+              <label for="time5">★</label>
+              <input type="radio" name="time" value="4" id="time4">
+              <label for="time4">★</label>
+              <input type="radio" name="time" value="3" id="time3">
+              <label for="time3">★</label>
+              <input type="radio" name="time" value="2" id="time2">
+              <label for="time2">★</label>
+              <input type="radio" name="time" value="1" id="time1">
+              <label for="time1">★</label>
+            </div>
+          </div>
+
+          <div class="rating-group">
+            <label>講師の説明の分かりやすさ</label>
+            <div class="star-rating" data-rating-name="instructor">
+              <input type="radio" name="instructor" value="5" id="inst5">
+              <label for="inst5">★</label>
+              <input type="radio" name="instructor" value="4" id="inst4">
+              <label for="inst4">★</label>
+              <input type="radio" name="instructor" value="3" id="inst3">
+              <label for="inst3">★</label>
+              <input type="radio" name="instructor" value="2" id="inst2">
+              <label for="inst2">★</label>
+              <input type="radio" name="instructor" value="1" id="inst1">
+              <label for="inst1">★</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 自由記述 -->
+        <div class="form-section">
+          <h3>自由記述</h3>
+
+          <div class="form-group">
+            <label for="positive">良かった点</label>
+            <textarea
+              id="positive"
+              name="positive"
+              rows="5"
+              placeholder="例: メタプロンプト生成が具体的で、すぐに使えた。実務に直結する内容だった。"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="improvement">改善してほしい点</label>
+            <textarea
+              id="improvement"
+              name="improvement"
+              rows="5"
+              placeholder="例: もう少し実践ワークの時間が欲しかった。もっと具体的な事例が知りたい。"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="requests">次回以降で学びたいこと</label>
+            <textarea
+              id="requests"
+              name="requests"
+              rows="5"
+              placeholder="例: 複雑なコンテクストの管理方法、チーム開発でのAI活用、より高度なプロンプトテクニック"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="other">その他、自由にご意見をお書きください</label>
+            <textarea
+              id="other"
+              name="other"
+              rows="5"
+              placeholder="研修全体への感想、要望、質問など、何でもお書きください"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- お名前 -->
+        <div class="form-section">
+          <h3>お名前</h3>
+          <div class="form-group">
+            <label for="name">氏名 <span style="color: var(--color-warning);">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="例: 山田 太郎"
+            >
+          </div>
+        </div>
+
+        <!-- 提出ボタン -->
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">フィードバックを送信</button>
+          <button type="button" class="btn-secondary" onclick="resetForm()">クリア</button>
+        </div>
+      </form>
+
+      <!-- 提出済みフィードバック一覧 -->
+      <div id="submitted-feedbacks" style="margin-top: 2rem;">
+        <h3>提出済みフィードバック</h3>
+        <div id="feedback-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 星評価のインタラクティブ表示
+    function initStarRatings() {
+      document.querySelectorAll('.star-rating').forEach(rating => {
+        const inputs = rating.querySelectorAll('input');
+        const labels = rating.querySelectorAll('label');
+
+        labels.forEach((label, index) => {
+          label.addEventListener('mouseover', function() {
+            highlightStars(labels, labels.length - 1 - index);
+          });
+        });
+
+        rating.addEventListener('mouseleave', function() {
+          const checked = rating.querySelector('input:checked');
+          if (checked) {
+            const checkedIndex = Array.from(inputs).indexOf(checked);
+            highlightStars(labels, labels.length - 1 - checkedIndex);
+          } else {
+            clearStars(labels);
+          }
+        });
+
+        inputs.forEach((input, index) => {
+          input.addEventListener('change', function() {
+            highlightStars(labels, labels.length - 1 - index);
+          });
+        });
+      });
+    }
+
+    function highlightStars(labels, upToIndex) {
+      labels.forEach((label, i) => {
+        if (i <= upToIndex) {
+          label.classList.add('active');
+        } else {
+          label.classList.remove('active');
+        }
+      });
+    }
+
+    function clearStars(labels) {
+      labels.forEach(label => label.classList.remove('active'));
+    }
+
+    // セッション選択時の処理
+    document.getElementById('session-select').addEventListener('change', function() {
+      const sessionId = this.value;
+      const form = document.getElementById('feedback-form');
+
+      if (sessionId) {
+        form.style.display = 'block';
+        form.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        form.style.display = 'none';
+      }
+    });
+
+    // フィードバック送信
+    document.getElementById('feedback-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const sessionId = document.getElementById('session-select').value;
+      const formData = new FormData(this);
+
+      // 星評価のチェック
+      const ratings = ['understanding', 'usefulness', 'time', 'instructor'];
+      let allRated = true;
+      ratings.forEach(rating => {
+        if (!formData.get(rating)) {
+          allRated = false;
+        }
+      });
+
+      if (!allRated) {
+        showToast('すべての項目に評価をつけてください', 'warning');
+        return;
+      }
+
+      const feedback = {
+        sessionId: sessionId,
+        submittedAt: new Date().toISOString(),
+        name: formData.get('name'),
+        ratings: {
+          understanding: parseInt(formData.get('understanding')),
+          usefulness: parseInt(formData.get('usefulness')),
+          time: parseInt(formData.get('time')),
+          instructor: parseInt(formData.get('instructor'))
+        },
+        comments: {
+          positive: formData.get('positive'),
+          improvement: formData.get('improvement'),
+          requests: formData.get('requests'),
+          other: formData.get('other')
+        }
+      };
+
+      // LocalStorageに保存（実際はサーバーに送信）
+      const feedbacks = storage.get('feedbacks') || [];
+      feedbacks.push(feedback);
+      storage.set('feedbacks', feedbacks);
+
+      showToast('フィードバックを送信しました。ありがとうございます！');
+
+      // フォームをリセット
+      this.reset();
+      document.getElementById('session-select').value = '';
+      this.style.display = 'none';
+
+      // 提出済みリストを更新
+      renderSubmittedFeedbacks();
+    });
+
+    // フォームクリア
+    function resetForm() {
+      if (confirm('入力内容をクリアしますか？')) {
+        document.getElementById('feedback-form').reset();
+        document.querySelectorAll('.star-rating label').forEach(label => {
+          label.classList.remove('active');
+        });
+      }
+    }
+
+    // 提出済みフィードバックの表示
+    function renderSubmittedFeedbacks() {
+      const feedbacks = storage.get('feedbacks') || [];
+      const container = document.getElementById('feedback-list');
+
+      if (feedbacks.length === 0) {
+        container.innerHTML = '<p style="color: var(--color-text-light);">まだフィードバックを提出していません</p>';
+        return;
+      }
+
+      const sessionNames = {
+        '1': '第1回: プロンプトとコンテクストを理解する',
+        '2': '第2回: GitHub Copilotの実践活用',
+        '3': '第3回: Claude Codeによる開発自動化',
+        '4': '第4回: RAGとコンテクスト管理',
+        '5': '第5回: 総まとめと実践プロジェクト'
+      };
+
+      let html = '<div class="schedule-cards">';
+
+      feedbacks.forEach((feedback, index) => {
+        const avgRating = (
+          feedback.ratings.understanding +
+          feedback.ratings.usefulness +
+          feedback.ratings.time +
+          feedback.ratings.instructor
+        ) / 4;
+
+        html += `
+          <div class="schedule-card">
+            <span class="badge badge-completed">提出済み</span>
+            <h4>${sessionNames[feedback.sessionId]}</h4>
+            <p><small>${formatDate(feedback.submittedAt)}</small></p>
+            <p>総合評価: ${'★'.repeat(Math.round(avgRating))}${'☆'.repeat(5 - Math.round(avgRating))} (${avgRating.toFixed(1)}/5.0)</p>
+            <ul style="text-align: left; font-size: 0.9rem;">
+              <li>理解しやすさ: ${'★'.repeat(feedback.ratings.understanding)}</li>
+              <li>実務活用度: ${'★'.repeat(feedback.ratings.usefulness)}</li>
+              <li>時間配分: ${'★'.repeat(feedback.ratings.time)}</li>
+              <li>講師: ${'★'.repeat(feedback.ratings.instructor)}</li>
+            </ul>
+          </div>
+        `;
+      });
+
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    // 初期化
+    document.addEventListener('DOMContentLoaded', function() {
+      initStarRatings();
+      renderSubmittedFeedbacks();
+
+      // URLパラメータからセッションを取得
+      const sessionParam = getUrlParameter('session');
+      if (sessionParam) {
+        document.getElementById('session-select').value = sessionParam;
+        document.getElementById('session-select').dispatchEvent(new Event('change'));
+      }
+    });
+  </script>
+</body>
+</html>

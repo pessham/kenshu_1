@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メタプロンプト生成ツール - AI活用研修ポータル</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AI活用研修ポータル</h1>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="materials.html">資料</a></li>
+        <li><a href="meta-prompt.html">メタプロンプト</a></li>
+        <li><a href="homework.html">宿題</a></li>
+        <li><a href="feedback.html">感想</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="meta-prompt-generator">
+      <h2>メタプロンプト生成ツール</h2>
+      <p>業務情報を入力すると、あなた専用のメタプロンプトが自動生成されます。生成されたメタプロンプトをChatGPTやClaudeに貼り付けることで、あなたの業務に最適化されたアシスタントとして機能します。</p>
+
+      <!-- ステップ表示 -->
+      <div class="steps">
+        <div class="step active">
+          <span class="step-number">1</span>
+          <span class="step-title">業務情報入力</span>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <span class="step-title">プレビュー</span>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <span class="step-title">保存・活用</span>
+        </div>
+      </div>
+
+      <!-- プリセットテンプレート -->
+      <div class="form-section">
+        <h3>テンプレートから選択（オプション）</h3>
+        <p class="help-text">まずはテンプレートを選んで、必要に応じてカスタマイズしてください</p>
+        <div class="template-buttons">
+          <button type="button" class="btn-template" data-template="web-developer">
+            Webアプリ開発者（A氏タイプ）
+          </button>
+          <button type="button" class="btn-template" data-template="system-maintenance">
+            システム保守担当（B氏タイプ）
+          </button>
+          <button type="button" class="btn-template" data-template="data-analyst">
+            データアナリスト
+          </button>
+        </div>
+      </div>
+
+      <!-- フォーム -->
+      <form id="meta-prompt-form">
+        <!-- セクション1: 役割と目的 -->
+        <div class="form-section">
+          <h3>1. 役割と目的</h3>
+
+          <div class="form-group">
+            <label for="role">Q1: あなたの主な役割は？</label>
+            <input
+              type="text"
+              id="role"
+              name="role"
+              placeholder="例: Webアプリケーション開発者"
+            >
+            <span class="help-text">省略可 - 職種や担当業務を入力してください</span>
+          </div>
+
+          <div class="form-group">
+            <label for="goal">Q2: AIを使って何を達成したいですか？</label>
+            <textarea
+              id="goal"
+              name="goal"
+              rows="3"
+              placeholder="例: 開発スピード向上、コード品質改善、バグ削減"
+            ></textarea>
+            <span class="help-text">省略可 - 具体的な目標を入力すると、より的確なサポートが得られます</span>
+          </div>
+        </div>
+
+        <!-- セクション2: 技術環境 -->
+        <div class="form-section">
+          <h3>2. 技術環境</h3>
+
+          <div class="form-group">
+            <label for="language">Q3: 主に使用しているプログラミング言語・フレームワークは？</label>
+            <input
+              type="text"
+              id="language"
+              name="language"
+              placeholder="例: PHP (Laravel 10), VB.NET (.NET 8), Python (Django)"
+            >
+            <span class="help-text">⭐ 重要 - 正確な回答を得るために必ず入力してください</span>
+          </div>
+
+          <div class="form-group">
+            <label for="database">Q4: データベースやインフラ環境は？</label>
+            <input
+              type="text"
+              id="database"
+              name="database"
+              placeholder="例: MySQL 8.0, PostgreSQL, AWS, Docker"
+            >
+            <span class="help-text">省略可 - 使用しているデータベースやクラウドサービスなど</span>
+          </div>
+
+          <div class="form-group">
+            <label for="tools">Q5: 開発ツールやエディタは？</label>
+            <input
+              type="text"
+              id="tools"
+              name="tools"
+              placeholder="例: Visual Studio 2022, VS Code, Git"
+            >
+            <span class="help-text">省略可 - 普段使っている開発ツール</span>
+          </div>
+        </div>
+
+        <!-- セクション3: 制約条件 -->
+        <div class="form-section">
+          <h3>3. 制約条件・ルール</h3>
+
+          <div class="form-group">
+            <label for="coding_rules">Q6: コーディング規約や命名規則は？</label>
+            <textarea
+              id="coding_rules"
+              name="coding_rules"
+              rows="3"
+              placeholder="例: PSR-12準拠、変数名はキャメルケース、クラス名はパスカルケース"
+            ></textarea>
+            <span class="help-text">省略可 - 守るべきコーディング規約</span>
+          </div>
+
+          <div class="form-group">
+            <label for="security">Q7: セキュリティやパフォーマンス要件は？</label>
+            <textarea
+              id="security"
+              name="security"
+              rows="3"
+              placeholder="例: SQLインジェクション対策必須、XSS対策、レスポンスタイム3秒以内"
+            ></textarea>
+            <span class="help-text">省略可 - 重要なセキュリティ要件や性能基準</span>
+          </div>
+
+          <div class="form-group">
+            <label for="legacy">Q8: 既存システムとの連携や制約は？</label>
+            <textarea
+              id="legacy"
+              name="legacy"
+              rows="3"
+              placeholder="例: レガシーPHPシステムとAPI連携、VB6コードとの互換性維持"
+            ></textarea>
+            <span class="help-text">省略可 - 既存システムとの関係や技術的制約</span>
+          </div>
+        </div>
+
+        <!-- セクション4: 業務スタイル -->
+        <div class="form-section">
+          <h3>4. 業務スタイル</h3>
+
+          <div class="form-group">
+            <label for="frequent_tasks">Q9: よく依頼する作業は？</label>
+            <textarea
+              id="frequent_tasks"
+              name="frequent_tasks"
+              rows="3"
+              placeholder="例: バリデーション実装、エラーハンドリング、API設計、リファクタリング"
+            ></textarea>
+            <span class="help-text">省略可 - AIによく頼みたい作業内容</span>
+          </div>
+
+          <div class="form-group">
+            <label for="past_issues">Q10: 過去に困ったことや避けたいことは？</label>
+            <textarea
+              id="past_issues"
+              name="past_issues"
+              rows="3"
+              placeholder="例: 一般的すぎる回答、セキュリティ考慮が不足、古い技術の知識不足"
+            ></textarea>
+            <span class="help-text">省略可 - AIに改善してほしい点</span>
+          </div>
+
+          <div class="form-group">
+            <label for="output_style">Q11: 希望する回答スタイルは？</label>
+            <textarea
+              id="output_style"
+              name="output_style"
+              rows="3"
+              placeholder="例: コードには必ずコメント、変更理由を説明、段階的な実装手順"
+            ></textarea>
+            <span class="help-text">省略可 - どのような形式で回答してほしいか</span>
+          </div>
+        </div>
+
+        <!-- アクションボタン -->
+        <div class="form-actions">
+          <button type="button" id="generate-btn" class="btn-primary">
+            メタプロンプトを生成
+          </button>
+          <button type="button" id="save-draft-btn" class="btn-secondary">
+            下書き保存
+          </button>
+          <button type="button" id="load-draft-btn" class="btn-secondary">
+            下書き読み込み
+          </button>
+        </div>
+      </form>
+
+      <!-- プレビューエリア -->
+      <div id="preview-section" class="preview-section" style="display: none;">
+        <h3>生成されたメタプロンプト</h3>
+        <div class="preview-box">
+          <pre id="preview-text"></pre>
+        </div>
+        <div class="preview-actions">
+          <button id="copy-btn" class="btn-primary">
+            📋 クリップボードにコピー
+          </button>
+          <button id="download-txt-btn" class="btn-secondary">
+            💾 テキストファイルでダウンロード
+          </button>
+          <button id="edit-btn" class="btn-secondary">
+            ✏️ 編集し直す
+          </button>
+        </div>
+
+        <!-- 使い方ガイド -->
+        <div class="usage-guide">
+          <h4>使い方</h4>
+          <ol>
+            <li>上の「クリップボードにコピー」ボタンをクリック</li>
+            <li>ChatGPT（<a href="https://chat.openai.com" target="_blank">chat.openai.com</a>）やClaude（<a href="https://claude.ai" target="_blank">claude.ai</a>）の新しいチャットを開く</li>
+            <li>最初のメッセージとしてメタプロンプトを貼り付けて送信</li>
+            <li>その後、通常通り質問や依頼をする</li>
+          </ol>
+          <p class="tip">💡 <strong>便利な保存方法:</strong> GPTsやClaudeのプロジェクト機能に保存すると、毎回貼り付ける必要がなくなります。詳しくは研修資料をご覧ください。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/meta-prompt.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI活用研修ポータル - トップページ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>AI活用研修ポータル</h1>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="materials.html">資料</a></li>
+        <li><a href="meta-prompt.html">メタプロンプト</a></li>
+        <li><a href="homework.html">宿題</a></li>
+        <li><a href="feedback.html">感想</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="hero">
+      <h2>AI活用研修シリーズ（全5回）</h2>
+      <p>プロンプトとコンテクストをマスターし、AI時代のエンジニアへ</p>
+    </section>
+
+    <!-- 進捗状況 -->
+    <section class="progress">
+      <h3>あなたの進捗</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 0%;">0%</div>
+      </div>
+      <p id="progress-text">研修を開始してください</p>
+    </section>
+
+    <!-- 研修スケジュール概要 -->
+    <section class="schedule-overview">
+      <h3>研修スケジュール</h3>
+      <div class="schedule-cards" id="schedule-cards">
+        <!-- 第1回カード -->
+        <div class="schedule-card upcoming" data-session="1">
+          <span class="badge badge-upcoming">予定</span>
+          <h4>第1回: プロンプトとコンテクストを理解する</h4>
+          <p>日時: 2025年11月20日(木) 10:00-12:00</p>
+          <p class="description">
+            AIの能力を最大限引き出す「プロンプト」と「コンテクスト」の基礎を学びます。
+            メタプロンプトの作成方法を習得し、あなた専用のAIアシスタントを構築します。
+          </p>
+          <ul>
+            <li><a href="materials.html?session=1">📚 資料を見る</a></li>
+            <li><a href="homework.html?session=1">📝 宿題を提出</a></li>
+            <li><a href="feedback.html?session=1">💭 感想を書く</a></li>
+          </ul>
+        </div>
+
+        <!-- 第2回カード -->
+        <div class="schedule-card upcoming" data-session="2">
+          <span class="badge badge-upcoming">予定</span>
+          <h4>第2回: GitHub Copilotの実践活用</h4>
+          <p>日時: 2025年12月18日(木) 10:00-12:00</p>
+          <p class="description">
+            GitHub Copilotを使った効率的なコーディング手法を学びます。
+            実際の業務コードを生成しながら、プロンプトの工夫ポイントを習得します。
+          </p>
+          <ul>
+            <li><a href="materials.html?session=2">📚 資料を見る</a></li>
+            <li><a href="homework.html?session=2">📝 宿題を提出</a></li>
+            <li><a href="feedback.html?session=2">💭 感想を書く</a></li>
+          </ul>
+        </div>
+
+        <!-- 第3回カード -->
+        <div class="schedule-card upcoming" data-session="3">
+          <span class="badge badge-upcoming">予定</span>
+          <h4>第3回: Claude Codeによる開発自動化</h4>
+          <p>日時: 2026年1月22日(木) 10:00-12:00</p>
+          <p class="description">
+            Claude Codeを活用して、ファイル編集やリファクタリングを自動化します。
+            大規模なコード変更も効率的に行う方法を実践します。
+          </p>
+          <ul>
+            <li><a href="materials.html?session=3">📚 資料を見る</a></li>
+            <li><a href="homework.html?session=3">📝 宿題を提出</a></li>
+            <li><a href="feedback.html?session=3">💭 感想を書く</a></li>
+          </ul>
+        </div>
+
+        <!-- 第4回カード -->
+        <div class="schedule-card upcoming" data-session="4">
+          <span class="badge badge-upcoming">予定</span>
+          <h4>第4回: RAGとコンテクスト管理</h4>
+          <p>日時: 2026年2月19日(木) 10:00-12:00</p>
+          <p class="description">
+            RAG（検索拡張生成）を活用して、大規模ドキュメントや社内ナレッジを
+            AIに効果的に学習させる方法を学びます。
+          </p>
+          <ul>
+            <li><a href="materials.html?session=4">📚 資料を見る</a></li>
+            <li><a href="homework.html?session=4">📝 宿題を提出</a></li>
+            <li><a href="feedback.html?session=4">💭 感想を書く</a></li>
+          </ul>
+        </div>
+
+        <!-- 第5回カード -->
+        <div class="schedule-card upcoming" data-session="5">
+          <span class="badge badge-upcoming">予定</span>
+          <h4>第5回: 総まとめと実践プロジェクト</h4>
+          <p>日時: 2026年3月19日(木) 10:00-12:00</p>
+          <p class="description">
+            これまでの学びを統合し、実際の業務プロジェクトにAIを適用します。
+            成果発表とベストプラクティスの共有を行います。
+          </p>
+          <ul>
+            <li><a href="materials.html?session=5">📚 資料を見る</a></li>
+            <li><a href="homework.html?session=5">📝 宿題を提出</a></li>
+            <li><a href="feedback.html?session=5">💭 感想を書く</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- お知らせ -->
+    <section class="announcements">
+      <h3>お知らせ</h3>
+      <div class="announcement-list" id="announcement-list">
+        <div class="announcement">
+          <span class="date">2025-11-19</span>
+          <p>AI活用研修ポータルサイトを公開しました。研修資料や宿題提出はこちらから行えます。</p>
+        </div>
+        <div class="announcement">
+          <span class="date">2025-11-19</span>
+          <p>メタプロンプト生成ツールが利用可能です。研修前に自分専用のメタプロンプトを作成してみましょう。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 進捗状況の計算と表示
+    function updateProgress() {
+      // LocalStorageから完了済みセッションを取得
+      const completedSessions = storage.get('completedSessions') || [];
+      const totalSessions = 5;
+      const progress = (completedSessions.length / totalSessions) * 100;
+
+      // 進捗バーの更新
+      const progressFill = document.getElementById('progress-fill');
+      progressFill.style.width = progress + '%';
+      progressFill.textContent = Math.round(progress) + '%';
+
+      // 進捗テキストの更新
+      const progressText = document.getElementById('progress-text');
+      if (completedSessions.length === 0) {
+        progressText.textContent = '研修を開始してください';
+      } else if (completedSessions.length === totalSessions) {
+        progressText.textContent = '全ての研修が完了しました！ おめでとうございます！';
+      } else {
+        progressText.textContent = `第${completedSessions.length}回 完了 | 第${completedSessions.length + 1}回 進行中`;
+      }
+
+      // スケジュールカードのステータス更新
+      const cards = document.querySelectorAll('.schedule-card');
+      cards.forEach(card => {
+        const session = parseInt(card.dataset.session);
+        const badge = card.querySelector('.badge');
+
+        if (completedSessions.includes(session)) {
+          card.classList.remove('upcoming');
+          card.classList.add('completed');
+          badge.classList.remove('badge-upcoming');
+          badge.classList.add('badge-completed');
+          badge.textContent = '完了';
+        }
+      });
+    }
+
+    // ページ読み込み時に進捗を更新
+    document.addEventListener('DOMContentLoaded', updateProgress);
+
+    // デモ用: 第1回を完了にする（実際は宿題提出時に更新）
+    // storage.set('completedSessions', [1]);
+  </script>
+</body>
+</html>
