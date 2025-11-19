@@ -53,10 +53,21 @@ const DATA_DIR = './data';
 
 // データディレクトリの初期化
 async function initDataDir() {
+  // dataディレクトリの作成
   try {
     await fs.access(DATA_DIR);
   } catch {
     await fs.mkdir(DATA_DIR, { recursive: true });
+  }
+
+  // uploadsディレクトリの作成
+  const uploadDirs = ['uploads', 'uploads/materials', 'uploads/homework'];
+  for (const dir of uploadDirs) {
+    try {
+      await fs.access(dir);
+    } catch {
+      await fs.mkdir(dir, { recursive: true });
+    }
   }
 
   // 初期ファイルの作成
@@ -314,7 +325,7 @@ async function startServer() {
     // データディレクトリの初期化
     await initDataDir();
 
-    app.listen(PORT, () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`
 ╔════════════════════════════════════════════════════════════════╗
 ║                                                                ║
