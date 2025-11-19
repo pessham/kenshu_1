@@ -58,18 +58,18 @@
         title: 'メタプロンプトを作成して使ってみよう',
         description: [
           'メタプロンプト生成ツールで自分専用のメタプロンプトを作成',
-          '実際に業務で3回以上使用',
-          '使用例と感想を提出'
+          '実際に業務で使用してみた結果と感想を提出',
+          '※使用例1は必須、使用例2・3は任意です'
         ],
         deadline: '2025-11-27T12:00:00',
         fields: [
           { name: 'meta_prompt', label: '作成したメタプロンプト', type: 'textarea', rows: 10, required: true },
           { name: 'usage1', label: '使用例1（何を依頼したか）', type: 'textarea', rows: 5, required: true },
           { name: 'result1', label: '使用例1の結果・感想', type: 'textarea', rows: 3, required: true },
-          { name: 'usage2', label: '使用例2（何を依頼したか）', type: 'textarea', rows: 5, required: true },
-          { name: 'result2', label: '使用例2の結果・感想', type: 'textarea', rows: 3, required: true },
-          { name: 'usage3', label: '使用例3（何を依頼したか）', type: 'textarea', rows: 5, required: true },
-          { name: 'result3', label: '使用例3の結果・感想', type: 'textarea', rows: 3, required: true },
+          { name: 'usage2', label: '使用例2（何を依頼したか）※任意', type: 'textarea', rows: 5, required: false },
+          { name: 'result2', label: '使用例2の結果・感想 ※任意', type: 'textarea', rows: 3, required: false },
+          { name: 'usage3', label: '使用例3（何を依頼したか）※任意', type: 'textarea', rows: 5, required: false },
+          { name: 'result3', label: '使用例3の結果・感想 ※任意', type: 'textarea', rows: 3, required: false },
           { name: 'overall', label: '全体の感想・気づき', type: 'textarea', rows: 5, required: true }
         ]
       },
