@@ -8,6 +8,9 @@ uploads/materials/*
 uploads/homework/*
 !uploads/materials/.gitkeep
 !uploads/homework/.gitkeep
+# 研修資料は除外対象外
+!uploads/materials/*.md
+!uploads/materials/*.pdf
 
 # Data files (optional - uncomment to exclude user data)
 # data/homework_submissions.json
