@@ -141,3 +141,60 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// ハンバーガーメニューとスクロール検知（スマホ用）
+document.addEventListener('DOMContentLoaded', function() {
+  // ハンバーガーメニューの制御
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('nav ul');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      // メニューが開いている時は背景スクロールを無効化
+      if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+
+    // メニューリンククリック時にメニューを閉じる
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // スクロール検知でヘッダーを隠す（スマホのみ）
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+  const scrollThreshold = 50; // スクロール開始の閾値
+
+  if (window.innerWidth <= 768) {
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      // メニューが開いている場合はスクロール検知を無効化
+      if (navMenu && navMenu.classList.contains('active')) {
+        return;
+      }
+
+      if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+        // 下にスクロール：ヘッダーを隠す
+        header.classList.add('hidden');
+      } else {
+        // 上にスクロール：ヘッダーを表示
+        header.classList.remove('hidden');
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
+  }
+});

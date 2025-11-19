@@ -22,32 +22,105 @@
 
 /* スマートフォン（768px以下） */
 @media (max-width: 768px) {
+  /* ヘッダー：スクロール時に非表示 */
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  header.hidden {
+    transform: translateY(-100%);
+  }
+
+  /* メインコンテンツの上部マージン */
+  body {
+    padding-top: 60px;
+  }
+
   /* ナビゲーション */
   nav {
-    flex-direction: column;
-    gap: var(--spacing-sm);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: var(--spacing-sm);
+    position: relative;
   }
 
   nav h1 {
-    font-size: 1.25rem;
-    text-align: center;
+    font-size: 1rem;
+    text-align: left;
   }
 
-  nav ul {
+  /* ハンバーガーメニューボタン */
+  .hamburger {
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-    gap: var(--spacing-xs);
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* メニュー */
+  nav ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--color-primary);
+    flex-direction: column;
+    padding-top: 80px;
+    padding-left: 0;
+    gap: 0;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+  }
+
+  nav ul.active {
+    right: 0;
   }
 
   nav li {
     width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   nav a {
     display: block;
     width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: left;
+  }
+
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
   }
 
   /* メインコンテンツ */
