@@ -349,6 +349,7 @@
   display: inline-flex;
   flex-direction: row-reverse;
   gap: 0.25rem;
+  position: relative;
 }
 
 .star-rating input {
@@ -360,11 +361,21 @@
   font-size: 2rem;
   color: var(--color-border);
   transition: color 0.2s;
+  position: relative;
 }
 
-.star-rating label:hover,
-.star-rating label:hover ~ label,
-.star-rating input:checked ~ label,
+/* チェックされた星とそれより後ろの星を色付け */
+.star-rating input[value="5"]:checked ~ label,
+.star-rating input[value="4"]:checked ~ label[for$="5"],
+.star-rating input[value="4"]:checked ~ label[for$="4"],
+.star-rating input[value="3"]:checked ~ label[for$="5"],
+.star-rating input[value="3"]:checked ~ label[for$="4"],
+.star-rating input[value="3"]:checked ~ label[for$="3"],
+.star-rating input[value="2"]:checked ~ label[for$="5"],
+.star-rating input[value="2"]:checked ~ label[for$="4"],
+.star-rating input[value="2"]:checked ~ label[for$="3"],
+.star-rating input[value="2"]:checked ~ label[for$="2"],
+.star-rating input[value="1"]:checked ~ label,
 .star-rating label.active {
   color: var(--color-secondary);
 }
