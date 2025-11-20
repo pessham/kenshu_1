@@ -6,8 +6,8 @@
       "title": "第1回: プレゼンテーションスライド",
       "type": "slide",
       "format": "pdf",
-      "size": "982KB",
-      "url": "/uploads/materials/アステック_AI活用研修_第1回_.pdf",
+      "size": "1062KB",
+      "url": "/uploads/materials/session1_presentation.pdf",
       "description": "プロンプトとコンテクストの基礎を学ぶスライド資料",
       "uploadedAt": "2025-11-20T10:00:00Z"
     },
@@ -18,7 +18,7 @@
       "type": "guide",
       "format": "md",
       "size": "15KB",
-      "url": "/uploads/materials/メタプロンプト生成ガイド.md",
+      "url": "/uploads/materials/meta_prompt_guide.md",
       "description": "メタプロンプトの作成方法を詳しく解説したガイドブック",
       "uploadedAt": "2025-11-20T10:00:00Z"
     },
@@ -28,8 +28,8 @@
       "title": "第1回: 補足資料 - プロンプトとコンテクスト詳解",
       "type": "reference",
       "format": "md",
-      "size": "12KB",
-      "url": "/uploads/materials/第1回_補足資料_プロンプトとコンテクスト詳解.md",
+      "size": "13KB",
+      "url": "/uploads/materials/session1_supplementary_prompt_and_context.md",
       "description": "プロンプトとコンテクストの違い、コンテキストウィンドウ、おすすめAIツールなど、第1回の内容をより深く理解するための補足資料",
       "uploadedAt": "2025-11-20T10:00:00Z"
     },
