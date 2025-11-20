@@ -14,12 +14,23 @@
     {
       "id": 2,
       "session": 1,
-      "title": "メタプロンプト生成ガイド",
+      "title": "メタプロンプト生成ガイド（対話形式）",
       "type": "guide",
       "format": "md",
-      "size": "15KB",
+      "size": "4.6KB",
+      "url": "/uploads/materials/meta_prompt.md",
+      "description": "AIに貼り付けるだけで、対話形式で自分専用のメタプロンプトが自動生成されるガイド。3ステップ・3分で完成！",
+      "uploadedAt": "2025-11-20T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "session": 1,
+      "title": "メタプロンプト使い方ガイド",
+      "type": "guide",
+      "format": "md",
+      "size": "8.8KB",
       "url": "/uploads/materials/meta_prompt_guide.md",
-      "description": "メタプロンプトの作成方法を詳しく解説したガイドブック",
+      "description": "メタプロンプトの使い方、保存方法、実践例を詳しく解説したガイドブック",
       "uploadedAt": "2025-11-20T10:00:00Z"
     },
     {
