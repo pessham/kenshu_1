@@ -56,6 +56,28 @@
       "uploadedAt": "2025-12-18T11:57:00Z"
     },
     {
+      "id": 9,
+      "session": 2,
+      "title": "Copilotコメントサンプル1",
+      "type": "reference",
+      "format": "txt",
+      "size": "0.2KB",
+      "url": "/uploads/materials/copilot_comment_sample1.txt",
+      "description": "郵便番号から住所を自動入力するJavaScript関数のコメント駆動開発サンプル",
+      "uploadedAt": "2025-12-18T12:45:00Z"
+    },
+    {
+      "id": 10,
+      "session": 2,
+      "title": "Copilotコメントサンプル2",
+      "type": "reference",
+      "format": "txt",
+      "size": "0.2KB",
+      "url": "/uploads/materials/copilot_comment_sample2.txt",
+      "description": "顧客データから売上を集計するVB.NETメソッドのコメント駆動開発サンプル",
+      "uploadedAt": "2025-12-18T12:45:00Z"
+    },
+    {
       "id": 4,
       "session": 3,
       "title": "第3回: プレゼンテーションスライド",

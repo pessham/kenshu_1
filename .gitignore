@@ -11,6 +11,7 @@ uploads/homework/*
 # 研修資料は除外対象外
 !uploads/materials/*.md
 !uploads/materials/*.pdf
+!uploads/materials/*.txt
 
 # Data files (optional - uncomment to exclude user data)
 # data/homework_submissions.json
