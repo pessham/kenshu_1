@@ -83,10 +83,10 @@
       "title": "第3回に向けた宿題（Aさん用）",
       "type": "reference",
       "format": "zip",
-      "size": "1.4KB",
-      "url": "/uploads/homework/homework_Asan.zip",
+      "size": "7.0KB",
+      "url": "/uploads/homework/homework2-3_Asan.zip",
       "description": "JavaScript用の演習ファイル一式（/explain、コメント駆動開発、コードレビュー）",
-      "uploadedAt": "2025-12-25T14:24:00Z"
+      "uploadedAt": "2025-12-25T14:34:00Z"
     },
     {
       "id": 12,
@@ -94,10 +94,10 @@
       "title": "第3回に向けた宿題（Bさん用）",
       "type": "reference",
       "format": "zip",
-      "size": "1.4KB",
-      "url": "/uploads/homework/homework_Bsan.zip",
+      "size": "8.0KB",
+      "url": "/uploads/homework/homework2-3_Bsan.zip",
       "description": "VB.NET用の演習ファイル一式（/explain、コメント駆動開発、コードレビュー）",
-      "uploadedAt": "2025-12-25T14:24:00Z"
+      "uploadedAt": "2025-12-25T14:34:00Z"
     },
     {
       "id": 4,
