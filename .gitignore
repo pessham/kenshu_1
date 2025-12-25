@@ -12,6 +12,7 @@ uploads/homework/*
 !uploads/materials/*.md
 !uploads/materials/*.pdf
 !uploads/materials/*.txt
+!uploads/homework/*.zip
 
 # Data files (optional - uncomment to exclude user data)
 # data/homework_submissions.json

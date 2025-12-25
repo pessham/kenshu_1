@@ -78,6 +78,28 @@
       "uploadedAt": "2025-12-18T12:45:00Z"
     },
     {
+      "id": 11,
+      "session": 2,
+      "title": "第3回に向けた宿題（Aさん用）",
+      "type": "reference",
+      "format": "zip",
+      "size": "1.4KB",
+      "url": "/uploads/homework/homework_Asan.zip",
+      "description": "JavaScript用の演習ファイル一式（/explain、コメント駆動開発、コードレビュー）",
+      "uploadedAt": "2025-12-25T14:24:00Z"
+    },
+    {
+      "id": 12,
+      "session": 2,
+      "title": "第3回に向けた宿題（Bさん用）",
+      "type": "reference",
+      "format": "zip",
+      "size": "1.4KB",
+      "url": "/uploads/homework/homework_Bsan.zip",
+      "description": "VB.NET用の演習ファイル一式（/explain、コメント駆動開発、コードレビュー）",
+      "uploadedAt": "2025-12-25T14:24:00Z"
+    },
+    {
       "id": 4,
       "session": 3,
       "title": "第3回: プレゼンテーションスライド",
