@@ -100,15 +100,125 @@
       "uploadedAt": "2025-12-25T14:34:00Z"
     },
     {
-      "id": 4,
+      "id": 30,
       "session": 3,
-      "title": "第3回: プレゼンテーションスライド",
+      "title": "第3回: プレゼンテーション資料",
       "type": "slide",
-      "format": "pdf",
-      "size": "準備中",
-      "url": "/uploads/materials/第3回_プレゼンテーション.pdf",
-      "description": "Claude Codeによる開発自動化の実践",
-      "uploadedAt": "2026-01-22T10:00:00Z"
+      "format": "md",
+      "size": "8KB",
+      "url": "/Astec3_RAG/presentation_slides.md",
+      "description": "第3回ワークショップのプレゼンテーションスライド（Markdown版）",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 31,
+      "session": 3,
+      "title": "第3回ミッションシナリオ",
+      "type": "guide",
+      "format": "md",
+      "size": "2KB",
+      "url": "/Astec3_RAG/23_mission_scenario.md",
+      "description": "データエンジニアリングチャレンジのシナリオ詳細",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 32,
+      "session": 3,
+      "title": "ワークショップ回答例",
+      "type": "reference",
+      "format": "md",
+      "size": "4KB",
+      "url": "/Astec3_RAG/30_workshop_solution_example.md",
+      "description": "ワークショップ課題の回答例と解説",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 33,
+      "session": 3,
+      "title": "ベクトル化プロンプト集",
+      "type": "guide",
+      "format": "md",
+      "size": "5KB",
+      "url": "/Astec3_RAG/11_vectorization_prompts.md",
+      "description": "RAGシステム用のベクトル化プロンプト例",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 34,
+      "session": 3,
+      "title": "マニュアル知識データ",
+      "type": "reference",
+      "format": "md",
+      "size": "1KB",
+      "url": "/Astec3_RAG/20_manual_knowledge.md",
+      "description": "構造化されたマニュアル知識データ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 35,
+      "session": 3,
+      "title": "NotebookLMスライド構成案",
+      "type": "reference",
+      "format": "md",
+      "size": "6KB",
+      "url": "/Astec3_RAG/40_notebooklm_slide_outline.md",
+      "description": "NotebookLMを活用したスライド構成案",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 36,
+      "session": 3,
+      "title": "生産ログ（昨日分）",
+      "type": "reference",
+      "format": "json",
+      "size": "1KB",
+      "url": "/Astec3_RAG/21_production_log_yesterday.json",
+      "description": "AI処理済みの生産ログデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 37,
+      "session": 3,
+      "title": "作業員スキルデータ",
+      "type": "reference",
+      "format": "json",
+      "size": "2KB",
+      "url": "/Astec3_RAG/22_personnel_skills.json",
+      "description": "作業員のスキルレベルデータ（JSON）",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 38,
+      "session": 3,
+      "title": "Rawデータ: 日報",
+      "type": "reference",
+      "format": "txt",
+      "size": "1KB",
+      "url": "/Astec3_RAG/raw_daily_report.txt",
+      "description": "加工前の日報テキストデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 39,
+      "session": 3,
+      "title": "Rawデータ: マニュアル",
+      "type": "reference",
+      "format": "txt",
+      "size": "1KB",
+      "url": "/Astec3_RAG/raw_manual.txt",
+      "description": "加工前のマニュアルテキストデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 40,
+      "session": 3,
+      "title": "Rawデータ: シフト表",
+      "type": "reference",
+      "format": "csv",
+      "size": "1KB",
+      "url": "/Astec3_RAG/raw_shift_excel.csv",
+      "description": "加工前のシフト表CSVデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
     },
     {
       "id": 5,

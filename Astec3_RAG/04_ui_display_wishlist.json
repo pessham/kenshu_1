@@ -1,0 +1,24 @@
+{
+    "ui_display_wishlist_title": "画面の一覧に表示したいデータ",
+    "display_items": [
+        {
+            "image_id": "001",
+            "product_name": "製品A",
+            "confidence": "94%",
+            "result": "NG"
+        },
+        {
+            "image_id": "3",
+            "product_name": "製品B",
+            "confidence": "75%くらい",
+            "result": "OKかも"
+        },
+        {
+            "image_id": "IMG_005",
+            "product_name": "製品C",
+            "confidence": "低め",
+            "result": "要確認"
+        }
+    ],
+    "note": "こんな感じでリスト表示したいです。IDの桁数とかはお任せします。"
+}

@@ -1,0 +1,6 @@
+{
+    "prompt_request_title": "AIへの説明文要望",
+    "instruction_image": "現場の人が見てわかるように、いい感じに説明してください。",
+    "context": "難しい専門用語は使わないで。",
+    "output_format": "特にこだわりないです。テキストでバーンと返してくれればOK。"
+}

@@ -1,0 +1,29 @@
+{
+    "report_date": "2025-01-20",
+    "system_date": "2025-01-21",
+    "lines": {
+        "Line_A": {
+            "status": "Normal",
+            "last_maintenance": "2025-01-05",
+            "days_since_maintenance": 16,
+            "maintenance_alert": true
+        },
+        "Line_B": {
+            "status": "Warning",
+            "errors": [
+                {
+                    "code": "502",
+                    "description": "Jamming detected at 14:00",
+                    "impact": "Requires 90% capacity mode next day"
+                }
+            ]
+        },
+        "Line_C": {
+            "status": "HighDefectRate",
+            "production_count": 2000,
+            "defect_count": 90,
+            "defect_rate_percent": 4.5,
+            "required_mode_next_day": "PrecisionInspection"
+        }
+    }
+}

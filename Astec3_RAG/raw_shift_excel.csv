@@ -1,0 +1,10 @@
+EmpID,Name,Rank,Line_Pref,Status,Memo
+101,Tanaka,A,Line_A,Absent,インフルエンザにより欠勤
+102,Sato,B,Line_A,Present,
+103,Suzuki,C,Line_A,Present,新人研修中
+201,Yamada,A,Line_B,Present,
+202,Inoue,B,Line_B,Present,
+203,Kato,A,Line_B,Present,どこでもできる
+301,Matsumoto,A,Line_C,Present,
+302,Saito,B,Line_C,Present,
+303,Kimura,C,Line_C,Present,

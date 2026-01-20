@@ -1,0 +1,27 @@
+{
+    "inspection_id": "INS_20250120_001",
+    "image_id": "IMG_20250120_001",
+    "inspection_timestamp": "2025-01-20T09:15:32.456Z",
+    "onnx_result": {
+        "label": "defect_scratch",
+        "label_ja": "傷不良",
+        "score": 0.94,
+        "bounding_box": {
+            "x": 120,
+            "y": 85,
+            "width": 45,
+            "height": 30
+        }
+    },
+    "risk_assessment": {
+        "risk_level": "high",
+        "risk_score": 94,
+        "requires_immediate_action": true
+    },
+    "llm_explanation": {
+        "short_explanation_ja": "製品左上部に明確な傷を検出。出荷前確認が必要です。",
+        "detailed_explanation_ja": "画像解析の結果、製品の左上部分（座標x=120, y=85付近）に傷状の不良が94%の確信度で検出されました...",
+        "recommended_action": "該当製品を検査エリアへ移動。目視確認後、良否判定を記録。",
+        "urgency": "today"
+    }
+}

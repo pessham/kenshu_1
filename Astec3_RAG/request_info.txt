@@ -1,0 +1,5 @@
+Please provide the GitHub repository URL for the "kenshu-1" project.
+I was unable to find it automatically from the provided website URL.
+
+Also, confirming the files to upload are all files currently in:
+/Users/pessham/Code/Astec3_RAG

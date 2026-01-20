@@ -1,0 +1,74 @@
+[
+    {
+        "id": "101",
+        "name": "Tanaka",
+        "rank": "A",
+        "preferred_line": "Line_A",
+        "status": "Absent",
+        "note": "Sick leave"
+    },
+    {
+        "id": "102",
+        "name": "Sato",
+        "rank": "B",
+        "preferred_line": "Line_A",
+        "status": "Present",
+        "note": ""
+    },
+    {
+        "id": "103",
+        "name": "Suzuki",
+        "rank": "C",
+        "preferred_line": "Line_A",
+        "status": "Present",
+        "note": "Newcomer"
+    },
+    {
+        "id": "201",
+        "name": "Yamada",
+        "rank": "A",
+        "preferred_line": "Line_B",
+        "status": "Present",
+        "note": ""
+    },
+    {
+        "id": "202",
+        "name": "Inoue",
+        "rank": "B",
+        "preferred_line": "Line_B",
+        "status": "Present",
+        "note": ""
+    },
+    {
+        "id": "203",
+        "name": "Kato",
+        "rank": "A",
+        "preferred_line": "Line_B",
+        "status": "Present",
+        "note": "Multi-skill"
+    },
+    {
+        "id": "301",
+        "name": "Matsumoto",
+        "rank": "A",
+        "preferred_line": "Line_C",
+        "status": "Present",
+        "note": ""
+    },
+    {
+        "id": "302",
+        "name": "Saito",
+        "rank": "B",
+        "preferred_line": "Line_C",
+        "status": "Present",
+        "note": ""
+    },
+    {
+        "id": "303",
+        "name": "Kimura",
+        "rank": "C",
+        "preferred_line": "Line_C",
+        "status": "Present",
+        "note": ""
+    }
+]

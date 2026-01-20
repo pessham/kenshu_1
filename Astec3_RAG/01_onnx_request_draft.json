@@ -1,0 +1,11 @@
+{
+  "request_title": "BさんからのONNX出力データ要望",
+  "data_sample": {
+    "image_id": "IMG_001",
+    "timestamp": "1月20日 午前9時15分くらい",
+    "result_text": "傷不良",
+    "confidence": "高め（9割くらい）",
+    "zahyou_xy": "左上のあたり",
+    "memo": "Aさんへ：こんな感じでデータ渡してくれたら助かります。座標は画面に赤枠出したいのでよろしく"
+  }
+}
