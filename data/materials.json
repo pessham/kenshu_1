@@ -166,6 +166,39 @@
       "uploadedAt": "2026-01-21T06:35:00Z"
     },
     {
+      "id": 38,
+      "session": 3,
+      "title": "Rawデータ: 日報",
+      "type": "reference",
+      "format": "txt",
+      "size": "1KB",
+      "url": "/Astec3_RAG/raw_daily_report.txt",
+      "description": "加工前の日報テキストデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 39,
+      "session": 3,
+      "title": "Rawデータ: マニュアル",
+      "type": "reference",
+      "format": "txt",
+      "size": "1KB",
+      "url": "/Astec3_RAG/raw_manual.txt",
+      "description": "加工前のマニュアルテキストデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
+      "id": 40,
+      "session": 3,
+      "title": "Rawデータ: シフト表",
+      "type": "reference",
+      "format": "csv",
+      "size": "1KB",
+      "url": "/Astec3_RAG/raw_shift_excel.csv",
+      "description": "加工前のシフト表CSVデータ",
+      "uploadedAt": "2026-01-21T06:30:00Z"
+    },
+    {
       "id": 32,
       "session": 3,
       "title": "ワークショップ回答例",
