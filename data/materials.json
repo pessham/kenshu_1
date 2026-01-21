@@ -102,13 +102,24 @@
     {
       "id": 30,
       "session": 3,
-      "title": "第3回: プレゼンテーション資料",
+      "title": "第3回: プレゼンテーション資料（PDF）",
+      "type": "slide",
+      "format": "pdf",
+      "size": "1062KB",
+      "url": "/Astec3_RAG/3rd_rag_presentation.pdf",
+      "description": "第3回ワークショップのプレゼンテーションスライド（PDF版）",
+      "uploadedAt": "2026-01-22T08:00:00Z"
+    },
+    {
+      "id": 50,
+      "session": 3,
+      "title": "第3回: プレゼンテーション資料（テキスト版）",
       "type": "slide",
       "format": "md",
       "size": "8KB",
-      "url": "/Astec3_RAG/presentation_slides.md",
-      "description": "第3回ワークショップのプレゼンテーションスライド（Markdown版）",
-      "uploadedAt": "2026-01-21T06:30:00Z"
+      "url": "/Astec3_RAG/3rd_rag_text.md",
+      "description": "第3回ワークショップのプレゼンテーションスライド（テキスト版）",
+      "uploadedAt": "2026-01-22T08:00:00Z"
     },
     {
       "id": 31,
