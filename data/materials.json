@@ -226,10 +226,10 @@
       "title": "第4回: プレゼンテーションスライド",
       "type": "slide",
       "format": "pdf",
-      "size": "準備中",
-      "url": "/uploads/materials/第4回_プレゼンテーション.pdf",
-      "description": "RAGとコンテクスト管理の実践テクニック",
-      "uploadedAt": "2026-02-19T10:00:00Z"
+      "size": "2.5MB",
+      "url": "/Astec_4_LLM/Astec_4_LocalLLM.pdf",
+      "description": "セキュアな環境でのローカルLLM構築と実践",
+      "uploadedAt": "2026-02-14T09:00:00Z"
     },
     {
       "id": 6,
