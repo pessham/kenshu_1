@@ -232,6 +232,39 @@
       "uploadedAt": "2026-02-14T09:00:00Z"
     },
     {
+      "id": 60,
+      "session": 4,
+      "title": "第4回宿題（Python）",
+      "type": "reference",
+      "format": "zip",
+      "size": "3KB",
+      "url": "/Astec_4_LLM/A_Python_Materials.zip",
+      "description": "Python用ハンズオン資料（main.py, requirements.txt）",
+      "uploadedAt": "2026-02-14T09:15:00Z"
+    },
+    {
+      "id": 61,
+      "session": 4,
+      "title": "第4回宿題（VB.NET）",
+      "type": "reference",
+      "format": "zip",
+      "size": "3KB",
+      "url": "/Astec_4_LLM/B_VBNET_Materials.zip",
+      "description": "VB.NET用ハンズオン資料（Program.vb）",
+      "uploadedAt": "2026-02-14T09:15:00Z"
+    },
+    {
+      "id": 62,
+      "session": 4,
+      "title": "社外秘マニュアル（教材用）",
+      "type": "reference",
+      "format": "md",
+      "size": "1.4KB",
+      "url": "/Astec_4_LLM/secret_manual.md",
+      "description": "ハンズオンで使用する非公開設定マニュアル（Markdown形式）",
+      "uploadedAt": "2026-02-14T09:15:00Z"
+    },
+    {
       "id": 6,
       "session": 5,
       "title": "第5回: プレゼンテーションスライド",
