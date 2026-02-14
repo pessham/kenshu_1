@@ -234,23 +234,23 @@
     {
       "id": 60,
       "session": 4,
-      "title": "第4回宿題（Python）",
+      "title": "Python雛形（穴埋め式）",
       "type": "reference",
       "format": "zip",
       "size": "3KB",
       "url": "/Astec_4_LLM/A_Python_Materials.zip",
-      "description": "Python用ハンズオン資料（main.py, requirements.txt）",
+      "description": "Python用ハンズオン資料（main.py, requirements.txt）。\n\n「SK接続」の時:\nコード内の TODO の箇所（ENDPOINT 変数）に、http://localhost:1234/v1 を書き込ませてください。\nこれで「接続テスト」を行います。\n\n「RAG実装」の時:\nコード内のプロンプトテンプレート部分を修正させます。\n(ここにマニュアル変数を書く) → {{$manual}}\n(ここにユーザー入力変数を書く) → {{$input}}\nこれに書き換えることで、RAGが完成します。",
       "uploadedAt": "2026-02-14T09:15:00Z"
     },
     {
       "id": 61,
       "session": 4,
-      "title": "第4回宿題（VB.NET）",
+      "title": "VB.NET雛形（穴埋め式）",
       "type": "reference",
       "format": "zip",
       "size": "3KB",
       "url": "/Astec_4_LLM/B_VBNET_Materials.zip",
-      "description": "VB.NET用ハンズオン資料（Program.vb）",
+      "description": "VB.NET用ハンズオン資料（Program.vb）。\n\n「SK接続」の時:\nコード内の TODO の箇所（ENDPOINT 変数）に、http://localhost:1234/v1 を書き込ませてください。\nこれで「接続テスト」を行います。\n\n「RAG実装」の時:\nコード内のプロンプトテンプレート部分を修正させます。\n(ここにマニュアル変数を書く) → {{$manual}}\n(ここにユーザー入力変数を書く) → {{$input}}\nこれに書き換えることで、RAGが完成します。",
       "uploadedAt": "2026-02-14T09:15:00Z"
     },
     {
