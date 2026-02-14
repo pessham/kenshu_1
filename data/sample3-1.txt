@@ -1,0 +1,23 @@
+/**
+ * 郵便番号から住所を検索する
+ * @param {string} postalCode
+ */
+async function searchAddress(postalCode) {
+    // ハイフン削除
+    const code = postalCode.replace('-', '');
+
+    // 7桁の数字かチェック（簡易チェック）
+    if (!/^\d{7}$/.test(code)) {
+        return null;
+    }
+
+    try {
+        // 架空のAPIエンドポイント
+        const response = await fetch(`https://api.example.com/address?zip=${code}`);
+        const data = await response.json();
+        return data.address;
+    } catch (error) {
+        console.error("API Error", error);
+        throw error;
+    }
+}

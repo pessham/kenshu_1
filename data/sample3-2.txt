@@ -1,0 +1,23 @@
+Public Class SalesData
+    Public Property SalesDate As DateTime
+    Public Property Amount As Integer
+    Public Property IsCancelled As Boolean
+End Class
+
+''' <summary>
+''' 売上集計メソッド（AI生成物）
+''' </summary>
+Public Function CalculateSales(salesList As List(Of SalesData), startDate As DateTime, endDate As DateTime) As Integer
+    Dim total As Double = 0 ' ※ここが怪しい（IntegerやDoubleの混在）
+
+    For Each sale In salesList
+        ' 期間内かつキャンセルされていないものを集計
+        If sale.SalesDate >= startDate AndAlso sale.SalesDate <= endDate Then
+            If Not sale.IsCancelled Then
+                total += sale.Amount
+            End If
+        End If
+    Next
+
+    Return CInt(total)
+End Function

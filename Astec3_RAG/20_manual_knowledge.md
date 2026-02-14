@@ -26,3 +26,85 @@
 ## 3. シフト・配置規定
 * **Line_Aリーダー規定**: 必ず「Rank B」以上の作業員を1名以上配置すること。
 * **残業規定**: 最大 2.0 時間まで許可。
+
+
+{
+  "document_info": {
+    "title": "2024年度 工場作業規定書 統合版",
+    "version": "3.1",
+    "author": "生産管理課",
+    "last_updated": "2024-04-15"
+  },
+  "production_lines": [
+    {
+      "line_id": "A",
+      "line_name": "組立ライン",
+      "type": "human_operated",
+      "standard_throughput_per_hour": {
+        "rank_A": 100,
+        "rank_B": 90,
+        "rank_C": 60
+      },
+      "conditions": [
+        {
+          "trigger": "days_since_maintenance > 14",
+          "effect": "efficiency_multiplier",
+          "value": 0.8,
+          "description": "前回メンテから14日経過でコンベア劣化により効率80%へ低下"
+        }
+      ]
+    },
+    {
+      "line_id": "B",
+      "line_name": "包装ライン",
+      "type": "machine_operated",
+      "standard_throughput_per_hour": 150,
+      "requirements": {
+        "min_personnel": 2,
+        "required_rank": "any"
+      },
+      "conditions": [
+        {
+          "trigger": "error_502_occurred_previous_day",
+          "effect": "efficiency_multiplier",
+          "value": 0.9,
+          "description": "前日にエラー502（ジャム）発生時は点検のため稼働率90%で運用"
+        }
+      ]
+    },
+    {
+      "line_id": "C",
+      "line_name": "検査ライン",
+      "type": "hybrid",
+      "modes": {
+        "normal": {
+          "throughput_per_hour": 200
+        },
+        "precision": {
+          "throughput_per_hour": 80,
+          "trigger_condition": "defect_rate > 0.03",
+          "note": "製品X-99クレーム対応により設定"
+        }
+      }
+    }
+  ],
+  "staffing_rules": [
+    {
+      "rule_id": "safety_01",
+      "target_rank": "C",
+      "restriction": "solo_work_prohibited",
+      "reason": "事故防止"
+    },
+    {
+      "rule_id": "leadership_01",
+      "target_line": "A",
+      "requirement": "leader_rank >= B"
+    }
+  ],
+  "general_rules": {
+    "overtime": {
+      "policy": "not_allowed_in_principle",
+      "max_hours_exception": 2
+    }
+  }
+}

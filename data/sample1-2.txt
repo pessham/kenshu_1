@@ -1,0 +1,15 @@
+' Bさん用：これをCopilotに「/explain」させてください
+Public Function P(s As String) As String
+    Dim parts As String() = s.Split(","c)
+    If parts.Length < 5 Then
+        Return ""
+    End If
+
+    Dim r As String = parts(1).Trim()
+    If r.Length > 10 Then
+        r = r.Substring(0, 10)
+    End If
+
+    Dim d As String = parts(4).Replace("-", "/")
+    Return r & " (" & d & ")"
+End Function
