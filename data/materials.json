@@ -265,6 +265,17 @@
       "uploadedAt": "2026-02-14T09:15:00Z"
     },
     {
+      "id": 63,
+      "session": 4,
+      "title": "第4回: 補助スライド（ベテランエンジニア編）",
+      "type": "slide",
+      "format": "pdf",
+      "size": "2.7MB",
+      "url": "/Astec_4_LLM/Astec_4_LocalLLM_2.pdf",
+      "description": "ベテランエンジニアを想定した追加課題と解説スライド",
+      "uploadedAt": "2026-02-19T08:25:00Z"
+    },
+    {
       "id": 6,
       "session": 5,
       "title": "第5回: プレゼンテーションスライド",
