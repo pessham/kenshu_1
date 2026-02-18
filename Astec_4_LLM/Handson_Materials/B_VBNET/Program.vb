@@ -46,20 +46,20 @@ Module Program
         ' ==========================================
         ' TODO: {{$manual}} と {{$input}} を埋め込む
         Dim promptTemplate As String = "
-        あなたは工場のベテラン管理アシスタントです。
+        あなたはシステム開発会社のベテランエンジニアです。
         以下の【社内マニュアル】のみに基づいて回答してください。
 
         【社内マニュアル】
-        (ここにマニュアル変数を書く)
+        {{$manual}}
 
         【ユーザーの質問】
-        (ここにユーザー入力変数を書く)
+        {{$input}}
         "
 
         ' 3. 関数化
         Dim chatFunction = kernel.CreateFunctionFromPrompt(promptTemplate)
 
-        Console.WriteLine(vbCrLf & "🤖 工場AIアシスタントが起動しました。（終了するには 'exit' と入力）")
+        Console.WriteLine(vbCrLf & "🤖 熟練エンジニアAIが起動しました。（終了するには 'exit' と入力）")
         Console.WriteLine(New String("-"c, 50))
 
         ' 4. 実行ループ

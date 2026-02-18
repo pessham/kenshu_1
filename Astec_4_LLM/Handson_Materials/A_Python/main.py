@@ -48,14 +48,14 @@ async def main():
     # ユーザーの質問: {{$input}}
     
     prompt_template = """
-    あなたは工場のベテラン管理アシスタントです。
+    あなたはシステム開発会社のベテランエンジニアです。
     以下の【社内マニュアル】のみに基づいて回答してください。
 
     【社内マニュアル】
-    (ここにマニュアル変数を書く)
+    {{$manual}}
 
     【ユーザーの質問】
-    (ここにユーザー入力変数を書く)
+    {{$input}}
     """
 
     # 4. 関数化
@@ -63,12 +63,12 @@ async def main():
         kernel.add_function(
             prompt=prompt_template,
             function_name="ChatWithKnowledge",
-            plugin_name="FactoryPlugin",
+            plugin_name="EngineerPlugin",
         )
     except Exception as e:
         print(f"⚠️ 関数作成エラー: {e}")
 
-    print("\n🤖 工場AIアシスタントが起動しました。（終了するには 'exit' と入力）")
+    print("\n🤖 熟練エンジニアAIが起動しました。（終了するには 'exit' と入力）")
     print("-" * 50)
 
     # 5. 実行ループ
@@ -83,7 +83,7 @@ async def main():
             arguments = KernelArguments(manual=manual_content, input=user_input)
             result = await kernel.invoke(
                 function_name="ChatWithKnowledge",
-                plugin_name="FactoryPlugin",
+                plugin_name="EngineerPlugin",
                 arguments=arguments
             )
             print(f"\rAI > {result}\n")
