@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1-redeploy",
+  "version": "1.0.2-order-fix",
   "materials": [
     {
       "id": 1,
@@ -222,6 +222,17 @@
       "uploadedAt": "2026-01-21T06:30:00Z"
     },
     {
+      "id": 63,
+      "session": 4,
+      "title": "第4回プレゼンテーションスライド（更新版）",
+      "type": "slide",
+      "format": "pdf",
+      "size": "2.7MB",
+      "url": "/Astec_4_LLM/Astec_4_LocalLLM_2.pdf",
+      "description": "ベテランエンジニアを想定した追加課題と解説スライド",
+      "uploadedAt": "2026-02-19T08:25:00Z"
+    },
+    {
       "id": 5,
       "session": 4,
       "title": "第4回: プレゼンテーションスライド",
@@ -264,17 +275,6 @@
       "url": "/Astec_4_LLM/secret_manual.md",
       "description": "ハンズオンで使用する非公開設定マニュアル（Markdown形式）",
       "uploadedAt": "2026-02-14T09:15:00Z"
-    },
-    {
-      "id": 63,
-      "session": 4,
-      "title": "第4回: 補助スライド（ベテランエンジニア編）",
-      "type": "slide",
-      "format": "pdf",
-      "size": "2.7MB",
-      "url": "/Astec_4_LLM/Astec_4_LocalLLM_2.pdf",
-      "description": "ベテランエンジニアを想定した追加課題と解説スライド",
-      "uploadedAt": "2026-02-19T08:25:00Z"
     },
     {
       "id": 6,
