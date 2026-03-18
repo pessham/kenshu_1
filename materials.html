@@ -112,12 +112,14 @@
           <p class="description">${material.description}</p>
           <p>ファイル形式: ${material.format.toUpperCase()} | サイズ: ${material.size}</p>
           <div class="actions">
-            <button class="btn-preview" onclick="showPreview('${material.url}', '${material.format}', '${material.title}')">
-              プレビュー
-            </button>
-            <a href="${material.url}" download class="btn-download">
-              ダウンロード
-            </a>
+            ${material.format === 'html'
+              ? `<a href="${material.url}" class="btn-preview">開いて読む</a>`
+              : `<button class="btn-preview" onclick="showPreview('${material.url}', '${material.format}', '${material.title}')">プレビュー</button>`
+            }
+            ${material.format === 'html'
+              ? ''
+              : `<a href="${material.url}" download class="btn-download">ダウンロード</a>`
+            }
           </div>
         `;
 

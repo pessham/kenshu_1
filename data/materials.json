@@ -292,32 +292,10 @@
       "session": 5,
       "title": "現場AI構築 秘伝書",
       "type": "reference",
-      "format": "md",
+      "format": "html",
       "size": "18KB",
-      "url": "/Astec_5_Final/secret_book.md",
+      "url": "/secret-book.html",
       "description": "第1〜4回の全知識を凝縮した虎の巻。プロンプト設計・RAG・ローカルLLM・失敗学・鉄板パターン集を収録。現場で困ったときに開く実践リファレンス。",
-      "uploadedAt": "2026-03-19T10:00:00Z"
-    },
-    {
-      "id": 71,
-      "session": 5,
-      "title": "第5回: セミナー台本",
-      "type": "guide",
-      "format": "md",
-      "size": "10KB",
-      "url": "/Astec_5_Final/session5_script.md",
-      "description": "最終回「現場AI構築発表会」の進行台本。発表の構成案・講師からの質問例・フィードバックポイントを含む。",
-      "uploadedAt": "2026-03-19T10:00:00Z"
-    },
-    {
-      "id": 72,
-      "session": 5,
-      "title": "第5回: NotebookLM用スライドアウトライン",
-      "type": "guide",
-      "format": "md",
-      "size": "8KB",
-      "url": "/Astec_5_Final/40_notebooklm_slide_outline.md",
-      "description": "NotebookLMにそのまま読み込ませてスライド生成できる詳細アウトライン。全16枚分のレイアウト・デザイン指定・カラーパレット・ビジュアル指示を含む。",
       "uploadedAt": "2026-03-19T10:00:00Z"
     },
     {
