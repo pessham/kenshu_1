@@ -283,17 +283,25 @@ Semantic Kernelで読み込む
 
 #### Semantic Kernelを使う理由
 
+この研修ではVB.NETとPythonの両方を使ってきた。
+言語が違っても、AIとの繋ぎ方を統一できるのがSemantic Kernelの最大の強みだ。
+
 ```
-【直接APIを叩く場合】
-  コード → OpenAI API
-  コード → Llama API
-  ← 接続先が変わるたびにコードを書き直し
+【Semantic Kernelがない場合】
+  VB.NET側   → OpenAI API（VB.NETで実装）
+  Python側   → OpenAI API（Pythonで実装）
+  ← 言語ごとにAIとの繋ぎ方を別々に実装・管理
 
 【Semantic Kernelを使う場合】
-  コード → Semantic Kernel → OpenAI API
-                           → Llama API（ここだけ変える）
-  ← 接続先の設定を1行変えるだけで「脳の載せ替え」が完了
+  VB.NET側  ┐
+             ├→ Semantic Kernel → OpenAI API
+  Python側  ┘                  → Llama API（ここだけ変える）
+  ← VB.NETでもPythonでも「同じ文法」でAIを扱える。
+    接続先の切り替えも設定1行で完了。
 ```
+
+Semantic Kernelは**「VB.NETとPythonの間に立つ通訳」**でもある。
+言語の壁を越えて同じ設計思想でAI機能を作れるから、チームで分担しやすい。
 
 #### ローカルLLMの現実的な弱点
 
